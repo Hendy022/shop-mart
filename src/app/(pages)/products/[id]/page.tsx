@@ -56,7 +56,7 @@ export default async function ProductDetails({ params }: ProductDetailsProps) {
                                 <span className="text-lg font-semibold  ">{formatCurrency(product.price)} </span>
                             </div>
                         </CardContent>
-                        <AddToCart productId={product.id} token={token}/>
+                        <AddToCart productId={product.id} token={token ?? undefined}/>
                     </div>
                 </Card>
             </div>

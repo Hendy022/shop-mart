@@ -49,7 +49,7 @@ export default async function Products() {
                             </CardContent>
                         </Link>
 
-                        <AddToCart productId={product.id} token={token}/>
+                        <AddToCart productId={product.id} token={token ?? undefined}/>
                     </Card>
                 </div>
             )}

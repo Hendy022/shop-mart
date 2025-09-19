@@ -76,7 +76,7 @@ export default async function CategoryProducts({ params }: CategoryProductsProps
                     </div>
                   </CardContent>
                 </Link>
-                <AddToCart productId={product.id} token={token} />
+                <AddToCart productId={product.id} token={token ?? undefined} />
               </Card>
             </div>
           ))}

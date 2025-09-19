@@ -10,7 +10,7 @@ import toast from 'react-hot-toast'
 import { CartContext } from '@/Context/CartContext'
 import { useRouter } from 'next/navigation'
 
-export default function AddToCart({ productId, token }: { productId: string, token: string | null }) {
+export default function AddToCart({ productId, token }: { productId: string, token: string | undefined }) {
     const [isLoading, setIsLoading] = useState(false);
 
     const router = useRouter()

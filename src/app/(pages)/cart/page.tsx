@@ -20,7 +20,7 @@ export default async function CartList() {
       <h1 className="text-3xl font-bold tracking-tight">Shopping Cart</h1>
 
       
-        <InnerCart cartData={cartData} token={token}/> 
+        <InnerCart cartData={cartData} token={token ?? undefined}/> 
     </div>
   );
 }
