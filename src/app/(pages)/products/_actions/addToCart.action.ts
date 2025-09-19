@@ -6,7 +6,7 @@
 import { GetCartResponseI } from "@/interfaces/cartInterface";
 
 export async function addTocartAction(productId: string, token: string) {
-    const response = await fetch('https://ecommerce.routemisr.com/api/v1/cart', {
+    const response = await fetch(`${process.env.API}/cart`, {
         method: 'POST',
         body: JSON.stringify({ productId }),
         headers: {

@@ -44,7 +44,7 @@ export default function InnerCart({ cartData , token }: { cartData: GetCartRespo
     async function clearCart() {
         
         setIsclearing(true)
-        const response = await fetch('https://ecommerce.routemisr.com/api/v1/cart/', {
+        const response = await fetch(`${process.env.API}/cart/`, {
             method: 'DELETE',
             headers: {
                 token: token!
