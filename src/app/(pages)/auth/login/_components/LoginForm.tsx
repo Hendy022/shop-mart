@@ -8,6 +8,7 @@ import { Input } from "@/components/ui/input"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { Loader2 } from "lucide-react"
 import { signIn } from 'next-auth/react'
+import { useSearchParams } from "next/navigation"
 import { useState } from "react"
 import { useForm } from "react-hook-form"
 import * as z from "zod"
@@ -23,7 +24,9 @@ const formSchema = z.object({
 
 export default function LoginForm() {
     type LoginFields = z.infer<typeof formSchema>;
-    const [apiError, setApiError] = useState<string | null>(null)
+
+    const searchParams = useSearchParams()
+    const [apiError, setApiError] = useState<string | null>(searchParams.get('error') || null)
     const [isLoading, setIsLoading] = useState<boolean>(false)
 
     const form = useForm<LoginFields>({
@@ -38,7 +41,7 @@ export default function LoginForm() {
         setIsLoading(true)
         const response = await signIn("credentials", {
             callbackUrl: "/",
-            redirect: false,
+            redirect: true,
             email: values.email,
             password: values.password,
         })

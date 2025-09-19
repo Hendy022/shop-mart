@@ -29,7 +29,7 @@ export default function CartContextProvider({ children }: { children: React.Reac
     async function getCartData() {
         setIsLoading(true);
 
-        const response = await fetch('http://localhost:3000/get-cart');
+        const response = await fetch(`/get-cart`);
         if (response.ok) {
 
             const data: GetCartResponseI = await response.json();

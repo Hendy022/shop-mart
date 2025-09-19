@@ -13,12 +13,28 @@ export async function GET() {
     const response = await fetch(`${process.env.API}/cart`, {
         method: 'GET',
         headers: {
-
             token: token + ''
         }
     });
 
     const data: GetCartResponseI = await response.json();
 
-    return NextResponse.json(data);
+    return NextResponse.json(data, {
+        headers: {
+            'Access-Control-Allow-Origin': '*',
+            'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
+            'Access-Control-Allow-Headers': 'Content-Type, Authorization, token',
+        },
+    });
+}
+
+export async function OPTIONS() {
+    return new NextResponse(null, {
+        status: 200,
+        headers: {
+            'Access-Control-Allow-Origin': '*',
+            'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
+            'Access-Control-Allow-Headers': 'Content-Type, Authorization, token',
+        },
+    });
 }

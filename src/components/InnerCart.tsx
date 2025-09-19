@@ -65,7 +65,8 @@ export default function InnerCart({ cartData , token }: { cartData: GetCartRespo
                 phone: phone.current?.value,
             }
         })
-        const response = await fetch(`https://ecommerce.routemisr.com/api/v1/orders/checkout-session/${cart.cartId}?url=http://localhost:3000`, {
+        const baseUrl = typeof window !== 'undefined' ? window.location.origin : 'https://shop-mart-hs72.vercel.app';
+        const response = await fetch(`https://ecommerce.routemisr.com/api/v1/orders/checkout-session/${cart.cartId}?url=${baseUrl}`, {
             method: 'POST',
             body:address,
             headers:{
@@ -84,8 +85,8 @@ export default function InnerCart({ cartData , token }: { cartData: GetCartRespo
     const { setCart } = useContext(CartContext);
 
     useEffect(() => {
-        getCartData()
-    }, [cart])
+        setCart(cart)
+    }, [setCart])
 
     return (
         <>
