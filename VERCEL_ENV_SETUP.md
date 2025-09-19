@@ -48,6 +48,26 @@ After redeployment, your application should work without the following errors:
 - ✅ CORS policy errors should be resolved
 - ✅ Cart API should work properly
 - ✅ Checkout session should use the correct URL
+- ✅ AddToCart should work without redirecting to home
+- ✅ Cart should update immediately after adding items
+
+## Debugging Steps
+
+If cart functionality still doesn't work:
+
+1. **Check browser console** for any error messages
+2. **Check Vercel function logs**:
+   - Go to Vercel Dashboard → Functions tab
+   - Look for `/get-cart` function logs
+   - Check for any error messages
+
+3. **Test the API directly**:
+   - Visit `https://shop-mart-hs72.vercel.app/get-cart` in your browser
+   - Check if it returns cart data or an error
+
+4. **Verify environment variables**:
+   - Make sure all three variables are set correctly
+   - Redeploy after setting them
 
 ## Local Development
 

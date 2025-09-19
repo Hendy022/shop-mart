@@ -14,7 +14,7 @@ export default function AddToCart({ productId, token }: { productId: string, tok
     const [isLoading, setIsLoading] = useState(false);
 
     const router = useRouter()
-    const { setCart } = useContext(CartContext);
+    const { setCart, getCartData } = useContext(CartContext);
 
     async function addProductToCart() {
 
@@ -38,7 +38,9 @@ export default function AddToCart({ productId, token }: { productId: string, tok
             const data: GetCartResponseI = await response.json();
             console.log(data)
             toast.success(data.message ?? "");
-            setCart(data)
+            setCart(data);
+            // Refresh cart data to ensure consistency
+            getCartData();
             setIsLoading(false);
         }
     }

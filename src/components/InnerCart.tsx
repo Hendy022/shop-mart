@@ -85,8 +85,8 @@ export default function InnerCart({ cartData , token }: { cartData: GetCartRespo
     const { setCart } = useContext(CartContext);
 
     useEffect(() => {
-        setCart(cart)
-    }, [setCart])
+        getCartData()
+    }, [])
 
     return (
         <>

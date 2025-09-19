@@ -29,12 +29,18 @@ export default function CartContextProvider({ children }: { children: React.Reac
     async function getCartData() {
         setIsLoading(true);
 
-        const response = await fetch(`/get-cart`);
-        if (response.ok) {
-
-            const data: GetCartResponseI = await response.json();
-
-            setCart(data);
+        try {
+            const response = await fetch(`/get-cart`);
+            if (response.ok) {
+                const data: GetCartResponseI = await response.json();
+                setCart(data);
+            } else {
+                console.error('Failed to fetch cart data:', response.status, response.statusText);
+                const errorData = await response.json().catch(() => ({}));
+                console.error('Error details:', errorData);
+            }
+        } catch (error) {
+            console.error('Error fetching cart data:', error);
         }
         setIsLoading(false);
     }
