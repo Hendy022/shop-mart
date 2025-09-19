@@ -76,7 +76,7 @@ export default async function BrandProducts({ params }: BrandProductsProps) {
                     </div>
                   </CardContent>
                 </Link>
-                <AddToCart productId={product.id} token={token ?? undefined } />
+                <AddToCart productId={product.id} token={token } />
               </Card>
             </div>
           ))}
