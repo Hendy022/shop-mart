@@ -34,5 +34,5 @@ export default async function middleware(req: NextRequest) {
 }
 
 export const config = {
-    matchesGlob : [protectedPages , authPages]
+    matcher: ['/cart', '/profile', '/allorders', '/auth/login', '/auth/register']
 }

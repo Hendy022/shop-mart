@@ -6,7 +6,6 @@ import { Toaster } from "react-hot-toast";
 import CartContextProvider from "@/Context/CartContext";
 import Footer from "@/components/Footer/Footer";
 import NextProvider from "@/components/NextProvider/NextProvider";
-import { getUserToken } from "@/utilities/GetToken";
 
 export default async function RootLayout({
   children,

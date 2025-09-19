@@ -23,7 +23,8 @@ export default async function Categories() {
                   <Image
                     src={category.image}
                     alt={category.name}
-                    fill
+                    width={300}
+                    height={300}
                     className="object-cover rounded-t-lg"
                   />
                 </div>

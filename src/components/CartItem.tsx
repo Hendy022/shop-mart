@@ -1,9 +1,8 @@
 "use client"
-import { CartContext } from '@/Context/CartContext';
 import { GetCartResponseI, Product, Product2 } from '@/interfaces/cartInterface'
 import { Loader2 } from 'lucide-react';
 import Image from 'next/image';
-import React, { useContext, useState } from 'react'
+import React, { useState } from 'react'
 import toast from 'react-hot-toast';
 
 

@@ -4,6 +4,7 @@ import React from 'react'
 import { OrdersInterface } from '@/interfaces/ordersInterface'
 import { getUserToken } from '@/utilities/GetToken'
 import { jwtDecode } from "jwt-decode";
+import Image from 'next/image'
 
 type JwtPayload={
   id: string
@@ -50,9 +51,11 @@ export default async function AllOrders() {
               <DropdownMenuSeparator />
               {order.cartItems.map((item) => (
                 <DropdownMenuItem key={item._id} className="flex items-center gap-3 py-2">
-                  <img
+                  <Image
                     src={item.product.imageCover}
                     alt={item.product.title}
+                    width={100}
+                    height={100}
                     className="w-12 h-12 object-cover rounded"
                   />
                   <div className="flex-1">

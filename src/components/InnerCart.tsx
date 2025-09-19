@@ -6,7 +6,6 @@ import { Loader2, Trash2 } from "lucide-react"
 import { GetCartResponseI } from "@/interfaces/cartInterface";
 import { useContext, useEffect, useRef, useState } from "react";
 import { CartContext } from "@/Context/CartContext";
-import toast from "react-hot-toast";
 import Link from "next/link";
 import {
     Dialog,

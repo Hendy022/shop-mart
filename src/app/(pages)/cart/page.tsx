@@ -1,9 +1,4 @@
 import { GetCartResponseI } from "@/interfaces/cartInterface";
-
-import { Button } from "@/components/ui/button";
-import { Trash, Trash2 } from "lucide-react";
-
-import Link from "next/link";
 import InnerCart from "@/components/InnerCart";
 import { getUserToken } from "@/utilities/GetToken";
 

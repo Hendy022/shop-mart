@@ -6,7 +6,7 @@ import { NextResponse } from "next/server";
 
 export async function GET() {
 
-    let token = await getUserToken();
+    const token = await getUserToken();
 
     const response = await fetch(`${process.env.API}/cart`, {
         method: 'GET',

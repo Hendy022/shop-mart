@@ -1,5 +1,6 @@
 import React from 'react';
 import { MapPin, Phone, Mail } from 'lucide-react';
+import Link from 'next/link';
 
 const Footer = () => {
   return (
@@ -38,11 +39,11 @@ const Footer = () => {
           <div>
             <h3 className="text-black font-bold text-sm mb-4">SHOP</h3>
             <ul className="space-y-2">
-              <li><a href="/categories" className="text-gray-600 text-sm hover:text-black transition-colors">Electronics</a></li>
-              <li><a href="/categories" className="text-gray-600 text-sm hover:text-black transition-colors">Fashion</a></li>
-              <li><a href="/categories" className="text-gray-600 text-sm hover:text-black transition-colors">Home & Garden</a></li>
-              <li><a href="/categories" className="text-gray-600 text-sm hover:text-black transition-colors">Sports</a></li>
-              <li><a href="/categories" className="text-gray-600 text-sm hover:text-black transition-colors">Deals</a></li>
+              <li><Link href="/categories" className="text-gray-600 text-sm hover:text-black transition-colors">Electronics</Link></li>
+              <li><Link href="/categories" className="text-gray-600 text-sm hover:text-black transition-colors">Fashion</Link></li>
+              <li><Link href="/categories" className="text-gray-600 text-sm hover:text-black transition-colors">Home & Garden</Link></li>
+              <li><Link href="/categories" className="text-gray-600 text-sm hover:text-black transition-colors">Sports</Link></li>
+              <li><Link href="/categories" className="text-gray-600 text-sm hover:text-black transition-colors">Deals</Link></li>
             </ul>
           </div>
 
@@ -50,11 +51,11 @@ const Footer = () => {
           <div>
             <h3 className="text-black font-bold text-sm mb-4">CUSTOMER SERVICE</h3>
             <ul className="space-y-2">
-              <li><a href="/contact" className="text-gray-600 text-sm hover:text-black transition-colors">Contact Us</a></li>
-              <li><a href="/help" className="text-gray-600 text-sm hover:text-black transition-colors">Help Center</a></li>
-              <li><a href="/track-order" className="text-gray-600 text-sm hover:text-black transition-colors">Track Your Order</a></li>
-              <li><a href="/returns" className="text-gray-600 text-sm hover:text-black transition-colors">Returns & Exchanges</a></li>
-              <li><a href="/size-guide" className="text-gray-600 text-sm hover:text-black transition-colors">Size Guide</a></li>
+              <li><Link href="/contact" className="text-gray-600 text-sm hover:text-black transition-colors">Contact Us</Link></li>
+              <li><Link href="/help" className="text-gray-600 text-sm hover:text-black transition-colors">Help Center</Link></li>
+              <li><Link href="/track-order" className="text-gray-600 text-sm hover:text-black transition-colors">Track Your Order</Link></li>
+              <li><Link href="/returns" className="text-gray-600 text-sm hover:text-black transition-colors">Returns & Exchanges</Link></li>
+              <li><Link href="/size-guide" className="text-gray-600 text-sm hover:text-black transition-colors">Size Guide</Link></li>
             </ul>
           </div>
 
@@ -62,11 +63,11 @@ const Footer = () => {
           <div>
             <h3 className="text-black font-bold text-sm mb-4">ABOUT</h3>
             <ul className="space-y-2">
-              <li><a href="/about" className="text-gray-600 text-sm hover:text-black transition-colors">About shopmart</a></li>
-              <li><a href="/careers" className="text-gray-600 text-sm hover:text-black transition-colors">Careers</a></li>
-              <li><a href="/press" className="text-gray-600 text-sm hover:text-black transition-colors">Press</a></li>
-              <li><a href="/investor-relations" className="text-gray-600 text-sm hover:text-black transition-colors">Investor Relations</a></li>
-              <li><a href="/sustainability" className="text-gray-600 text-sm hover:text-black transition-colors">Sustainability</a></li>
+              <li><Link href="/about" className="text-gray-600 text-sm hover:text-black transition-colors">About shopmart</Link></li>
+              <li><Link href="/careers" className="text-gray-600 text-sm hover:text-black transition-colors">Careers</Link></li>
+              <li><Link href="/press" className="text-gray-600 text-sm hover:text-black transition-colors">Press</Link></li>
+              <li><Link href="/investor-relations" className="text-gray-600 text-sm hover:text-black transition-colors">Investor Relations</Link></li>
+              <li><Link href="/sustainability" className="text-gray-600 text-sm hover:text-black transition-colors">Sustainability</Link></li>
             </ul>
           </div>
 
@@ -74,11 +75,11 @@ const Footer = () => {
           <div>
             <h3 className="text-black font-bold text-sm mb-4">POLICIES</h3>
             <ul className="space-y-2">
-              <li><a href="/privacy-policy" className="text-gray-600 text-sm hover:text-black transition-colors">Privacy Policy</a></li>
-              <li><a href="/terms-of-service" className="text-gray-600 text-sm hover:text-black transition-colors">Terms of Service</a></li>
-              <li><a href="/cookie-policy" className="text-gray-600 text-sm hover:text-black transition-colors">Cookie Policy</a></li>
-              <li><a href="/shipping-policy" className="text-gray-600 text-sm hover:text-black transition-colors">Shipping Policy</a></li>
-              <li><a href="/refund-policy" className="text-gray-600 text-sm hover:text-black transition-colors">Refund Policy</a></li>
+              <li><Link href="/privacy-policy" className="text-gray-600 text-sm hover:text-black transition-colors">Privacy Policy</Link></li>
+              <li><Link href="/terms-of-service" className="text-gray-600 text-sm hover:text-black transition-colors">Terms of Service</Link></li>
+              <li><Link href="/cookie-policy" className="text-gray-600 text-sm hover:text-black transition-colors">Cookie Policy</Link></li>
+              <li><Link href="/shipping-policy" className="text-gray-600 text-sm hover:text-black transition-colors">Shipping Policy</Link></li>
+              <li><Link href="/refund-policy" className="text-gray-600 text-sm hover:text-black transition-colors">Refund Policy</Link></li>
             </ul>
           </div>
         </div>

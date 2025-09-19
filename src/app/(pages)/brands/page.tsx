@@ -23,7 +23,8 @@ export default async function Brands() {
                   <Image
                     src={brand.image}
                     alt={brand.name}
-                    fill
+                    width={300}
+                    height={300}
                     className="object-cover rounded-t-lg"
                   />
                 </div>

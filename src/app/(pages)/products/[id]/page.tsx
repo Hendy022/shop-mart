@@ -1,22 +1,14 @@
 import AddToCart from "@/components/AddToCart/AddToCart";
-import CartIcon from "@/components/Icons/CartIcon";
-import HeartIcon from "@/components/Icons/HeartIcon";
 import StarIcon from "@/components/Icons/StarIcon";
-import { Button } from "@/components/ui/button";
 import {
     Card,
-    CardAction,
     CardContent,
-    CardDescription,
-    CardFooter,
     CardHeader,
-    CardTitle,
 } from "@/components/ui/card"
 import { Product } from "@/interfaces";
 import { formatCurrency } from "@/utilities/formatPrice";
 import { getUserToken } from "@/utilities/GetToken";
 import Image from "next/image";
-import Link from "next/link";
 
 interface ProductDetailsProps {
     params: {

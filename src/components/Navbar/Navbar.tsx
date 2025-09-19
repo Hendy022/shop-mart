@@ -1,13 +1,9 @@
 "use client"
 import {
   NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuIndicator,
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
-  NavigationMenuTrigger,
-  NavigationMenuViewport,
 } from "@/components/ui/navigation-menu"
 import {
   DropdownMenu,
@@ -18,12 +14,10 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 import Link from "next/link"
-import { Button } from "../ui/button"
 import { Badge } from "../ui/badge"
 import CartIcon from "../Icons/CartIcon"
 
 import { Loader2 } from "lucide-react"
-import { GetCartResponseI } from "@/interfaces/cartInterface"
 import { useContext } from "react"
 import { CartContext } from "@/Context/CartContext"
 import { signOut, useSession } from "next-auth/react"
