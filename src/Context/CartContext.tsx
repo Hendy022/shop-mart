@@ -14,8 +14,8 @@ type CartContextI = {
 export const CartContext = createContext<CartContextI>({
     isLoading: false,
     cart: null,
-    setCart: (value: GetCartResponseI | null) => { },
-    setIsLoading: (value: boolean) => { },
+    setCart: () => { },
+    setIsLoading: () => { },
     getCartData: () => { },
 
 });
