@@ -9,9 +9,20 @@ import { NextResponse } from "next/server";
 export async function GET() {
     try {
         const token = await getUserToken();
+        console.log('Token from getUserToken:', token);
+        
+        // Check if user is authenticated
+        if (!token) {
+            console.log('No token found - user not authenticated');
+            return NextResponse.json(
+                { message: 'User not authenticated', error: 'No token found' },
+                { status: 401 }
+            );
+        }
         
         // Fallback API URL if environment variable is not set
         const apiUrl = process.env.API || 'https://ecommerce.routemisr.com/api/v1';
+        console.log('API URL:', apiUrl);
         
         const response = await fetch(`${apiUrl}/cart`, {
             method: 'GET',
@@ -20,10 +31,13 @@ export async function GET() {
             }
         });
 
+        console.log('Cart API Response Status:', response.status);
+
         if (!response.ok) {
-            console.error('Cart API Error:', response.status, response.statusText);
+            const errorText = await response.text();
+            console.error('Cart API Error:', response.status, response.statusText, errorText);
             return NextResponse.json(
-                { message: 'Failed to fetch cart data', error: response.statusText },
+                { message: 'Failed to fetch cart data', error: response.statusText, details: errorText },
                 { status: response.status }
             );
         }

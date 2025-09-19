@@ -34,6 +34,10 @@ export default function CartContextProvider({ children }: { children: React.Reac
             if (response.ok) {
                 const data: GetCartResponseI = await response.json();
                 setCart(data);
+            } else if (response.status === 401) {
+                // User not authenticated, set cart to null
+                console.log('User not authenticated, clearing cart');
+                setCart(null);
             } else {
                 console.error('Failed to fetch cart data:', response.status, response.statusText);
                 const errorData = await response.json().catch(() => ({}));
