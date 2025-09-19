@@ -13,7 +13,7 @@ function formatCurrency(num: number) {
     }).format(num);
 }
 export default function CartItem({ item, setInnerCart , token }: 
-    { token:string | undefined ,setInnerCart: (value: GetCartResponseI) => void, item: Product<Product2> }) {
+    { token:string | null ,setInnerCart: (value: GetCartResponseI) => void, item: Product<Product2> }) {
 
     const [isRemoving, setIsRemoving] = useState(false)
     const [isUpdating, setIsUpdating] = useState(false)
