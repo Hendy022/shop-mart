@@ -9,7 +9,6 @@ import { Loader2 } from 'lucide-react'
 import toast from 'react-hot-toast'
 import { CartContext } from '@/Context/CartContext'
 import { useRouter } from 'next/navigation'
-import { addTocartAction } from '@/app/(pages)/products/_actions/addToCart.action'
 
 export default function AddToCart({ productId, token }: { productId: string, token: string | undefined }) {
     const [isLoading, setIsLoading] = useState(false);
@@ -26,7 +25,17 @@ export default function AddToCart({ productId, token }: { productId: string, tok
 
             setIsLoading(true);
             
-            const data: GetCartResponseI = await addTocartAction(productId , token);
+            const response = await fetch('https://ecommerce.routemisr.com/api/v1/cart', {
+                method: 'POST',
+                body: JSON.stringify({ productId }),
+                headers: {
+        
+                    token: token,
+                    "Content-Type": "application/json"
+                }
+            });
+        
+            const data: GetCartResponseI = await response.json();
             console.log(data)
             toast.success(data.message ?? "");
             setCart(data)
