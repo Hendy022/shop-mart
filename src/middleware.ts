@@ -2,7 +2,7 @@
 // src/middleware
 import { getToken } from "next-auth/jwt";
 import { NextRequest, NextResponse } from "next/server";
-import { matchesGlob } from "path";
+
 
 const protectedPages = new Set(["/cart", '/profile' , '/allorders'])
 const authPages = new Set(["/auth/login", "/auth/register"])

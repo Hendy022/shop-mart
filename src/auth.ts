@@ -76,14 +76,14 @@ export const authOptions: NextAuthOptions = {
         }),
     ],
     callbacks: {
-        jwt:({token , user}) =>  {
+        jwt({token , user}){
             if (user) {
                 token.token = user.token,
                 token.user = user.user
             }
             return token;
         },
-        session : ({session , token})=>{
+        session ({session , token}){
             session.user = token.user;
             return session
         }

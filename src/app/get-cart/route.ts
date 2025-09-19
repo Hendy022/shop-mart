@@ -1,8 +1,10 @@
+
+// get-cart/route.ts 
+// get data with token in client component
+
 import { GetCartResponseI } from "@/interfaces/cartInterface";
 import { getUserToken } from "@/utilities/GetToken";
 import { NextResponse } from "next/server";
-
-
 
 export async function GET() {
 
