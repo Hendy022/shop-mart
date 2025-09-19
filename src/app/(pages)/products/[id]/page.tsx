@@ -27,10 +27,10 @@ interface ProductDetailsProps {
 
 export default async function ProductDetails({ params }: ProductDetailsProps) {
 
-    let { id } = await params;
+    const { id } = await params;
 
-    let response = await fetch('https://ecommerce.routemisr.com/api/v1/products/' + id);
-    let { data: product }: { data: Product } = await response.json();
+    const response = await fetch('https://ecommerce.routemisr.com/api/v1/products/' + id);
+    const { data: product }: { data: Product } = await response.json();
 
     const token = await getUserToken();
 

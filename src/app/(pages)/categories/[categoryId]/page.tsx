@@ -1,5 +1,5 @@
 import React from 'react'
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import { Card, CardContent, CardHeader } from '@/components/ui/card'
 import { Product } from '@/interfaces/productsInterface'
 import { Category } from '@/interfaces/categoryInterface'
 import { formatCurrency } from '@/utilities/formatPrice'

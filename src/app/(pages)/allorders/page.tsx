@@ -22,7 +22,7 @@ export default async function AllOrders() {
   return (
     <div className="container mx-auto px-4 py-6">
       <h1 className="text-3xl font-bold tracking-tight mb-6">All Orders</h1>
-      {ordersResponse.reverse().map((order, idx) => (
+      {ordersResponse.reverse().map((order) => (
         <div key={order._id} className="mb-8 border rounded-lg shadow p-6 bg-white">
           <div className="mb-4">
             <h2 className="text-xl font-semibold mb-2">Order #{order.id}</h2>

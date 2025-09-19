@@ -3,7 +3,6 @@ import { Button } from "@/components/ui/button"
 import {
     Form,
     FormControl,
-    FormDescription,
     FormField,
     FormItem,
     FormLabel,
@@ -57,7 +56,7 @@ export default function RegisterForm() {
             location.href = response.url || '/'
         } else {
 
-            setApiError(response?.error!)
+            setApiError(response?.error || 'Registration failed')
         }
         setIsLoading(false)
     }

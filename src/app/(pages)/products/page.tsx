@@ -19,10 +19,10 @@ import Image from "next/image";
 import Link from "next/link";
 
 export default async function Products() {
-    let response = await fetch('https://ecommerce.routemisr.com/api/v1/products',{
+    const response = await fetch('https://ecommerce.routemisr.com/api/v1/products',{
         cache: 'force-cache'
     });
-    let { data: products }: { data: Product[] } = await response.json();
+    const { data: products }: { data: Product[] } = await response.json();
 
     const token = await getUserToken();
 
