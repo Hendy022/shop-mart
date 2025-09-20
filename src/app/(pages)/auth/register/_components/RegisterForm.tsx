@@ -12,6 +12,7 @@ import { Input } from "@/components/ui/input"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { Loader2 } from "lucide-react"
 import { signIn } from 'next-auth/react'
+import { useRouter } from "next/navigation"
 import { useState } from "react"
 import { useForm } from "react-hook-form"
 import * as z from "zod"
@@ -33,6 +34,7 @@ export default function RegisterForm() {
     const [apiError, setApiError] = useState<string | null>(null)
     const [isLoading, setIsLoading] = useState<boolean>(false)
 
+
     const form = useForm<RegisterFields>({
         resolver: zodResolver(formSchema),
         defaultValues: {
@@ -43,20 +45,20 @@ export default function RegisterForm() {
             phone: "",
         },
     })
+    const router = useRouter()
 
     async function onSubmit(values: RegisterFields) {
         setIsLoading(true)
-        const response = await signIn("Credentials-register", {
-            callbackUrl: "/",
-            redirect: false,
-            email: values.email,
-            password: values.password,
+        const response = await fetch('https://ecommerce.routemisr.com/api/v1/auth/signup',{
+            method: 'POST',
+            headers:{"Content-Type" : "application/json"},
+            body: JSON.stringify(values)
         })
-        if (response?.ok) {
-            location.href = response.url || '/'
-        } else {
-
-            setApiError(response?.error || 'Registration failed')
+        const payload = await response.json();
+        if (response.ok) {
+            router.push('/auth/login')
+        }else{
+            setApiError(payload.message)
         }
         setIsLoading(false)
     }

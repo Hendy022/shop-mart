@@ -44,7 +44,7 @@ export default function InnerCart({ cartData , token }: { cartData: GetCartRespo
     async function clearCart() {
         
         setIsclearing(true)
-        const response = await fetch(`${process.env.API}/cart/`, {
+        const response = await fetch(`https://ecommerce.routemisr.com/api/v1/cart/`, {
             method: 'DELETE',
             headers: {
                 token: token!
@@ -127,9 +127,9 @@ export default function InnerCart({ cartData , token }: { cartData: GetCartRespo
                                 </div>
 
 
-                                <button className="w-full  cursor-pointer mt-3 h-11 rounded-xl border hover:bg-accent">
+                                <Link href={'/products'} className="w-full  cursor-pointer mt-3 h-11 rounded-xl border hover:bg-accent">
                                     Continue Shopping
-                                </button>
+                                </Link>
 
                                 <Dialog>
                                     <form>

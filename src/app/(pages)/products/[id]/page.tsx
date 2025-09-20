@@ -9,6 +9,7 @@ import { Product } from "@/interfaces";
 import { formatCurrency } from "@/utilities/formatPrice";
 import { getUserToken } from "@/utilities/GetToken";
 import Image from "next/image";
+import ProductSlider from "../_component/ProductSlider";
 
 interface ProductDetailsProps {
     params: {
@@ -31,9 +32,9 @@ export default async function ProductDetails({ params }: ProductDetailsProps) {
 
         <div className="min-h-screen flex justify-center items-center -mt-12">
             <div>
-                <Card className="gap-4 flex-col md:flex-row items-center">
+                <Card className="gap-4 lg:min-w-3xl flex-col md:flex-row items-center">
                     <CardHeader className="md:w-1/2 w-full p-10 md:p-0">
-                        <Image className="w-full" src={product.imageCover} alt={product.title} width={700} height={700} />
+                        <ProductSlider images={product.images}/>
                     </CardHeader>
                     <div className="space-y-4 md:w-2/3">
 
