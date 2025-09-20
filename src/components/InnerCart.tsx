@@ -29,7 +29,7 @@ function formatCurrency(num: number) {
     }).format(num);
 }
 
-export default function InnerCart({ cartData , token }: { cartData: GetCartResponseI , token: string| undefined }) {
+export default function InnerCart({ cartData, token }: { cartData: GetCartResponseI, token: string | undefined }) {
 
     const [isLoading, setIsLoading] = useState(false)
     const [cart, setInnerCart] = useState<GetCartResponseI>(cartData);
@@ -42,7 +42,7 @@ export default function InnerCart({ cartData , token }: { cartData: GetCartRespo
     const { getCartData } = useContext(CartContext);
 
     async function clearCart() {
-        
+
         setIsclearing(true)
         const response = await fetch(`https://ecommerce.routemisr.com/api/v1/cart/`, {
             method: 'DELETE',
@@ -68,8 +68,8 @@ export default function InnerCart({ cartData , token }: { cartData: GetCartRespo
         const baseUrl = typeof window !== 'undefined' ? window.location.origin : 'https://shop-mart-hs72.vercel.app';
         const response = await fetch(`https://ecommerce.routemisr.com/api/v1/orders/checkout-session/${cart.cartId}?url=${baseUrl}`, {
             method: 'POST',
-            body:address,
-            headers:{
+            body: address,
+            headers: {
                 token: token!,
                 "Content-Type": "application/json"
             }
@@ -82,7 +82,7 @@ export default function InnerCart({ cartData , token }: { cartData: GetCartRespo
     }
 
 
-    
+
     useEffect(() => {
         getCartData()
     }, [])
@@ -126,10 +126,11 @@ export default function InnerCart({ cartData , token }: { cartData: GetCartRespo
                                     <span className="text-base font-bold">{cart.data.totalCartPrice}</span>
                                 </div>
 
-
-                                <Link href={'/products'} className="w-full  cursor-pointer mt-3 h-11 rounded-xl border hover:bg-accent">
-                                    Continue Shopping
-                                </Link>
+                                <Link href={'/products'} >
+                                    <button className="w-full  cursor-pointer mt-3 h-11 rounded-xl border hover:bg-accent">
+                                        Continue Shopping
+                                    </button>
+                                    </Link>
 
                                 <Dialog>
                                     <form>
@@ -163,7 +164,7 @@ export default function InnerCart({ cartData , token }: { cartData: GetCartRespo
                                                 <DialogClose asChild>
                                                     <Button variant="outline">Cancel</Button>
                                                 </DialogClose>
-                                                <Button disabled={isLoading}  className=" cursor-pointer" onClick={checkoutSession} type="submit">
+                                                <Button disabled={isLoading} className=" cursor-pointer" onClick={checkoutSession} type="submit">
                                                     {isLoading && <Loader2 className="animate-spin" />}
                                                     Checkout</Button>
                                             </DialogFooter>

@@ -15,10 +15,10 @@ import * as z from "zod"
 
 const formSchema = z.object({
     email: z.email("Please enter invalid email"),
-    password: z.string('password is required').regex(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/, `Matches 8 or more characters that are alphanumeric or from the specified special character set.
-    at least one uppercase letter.
-    at least one lowercase letter.
-    at least one digit.
+    password: z.string('password is required').regex(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/, `Matches 8 or more characters that are alphanumeric or from the specified special character set <br/>
+    at least one uppercase letter.<br/>
+    at least one lowercase letter.<br/>
+    at least one digit.<br/>
     at least one special character.`)
 })
 
@@ -26,7 +26,7 @@ export default function LoginForm() {
     type LoginFields = z.infer<typeof formSchema>;
 
     const searchParams = useSearchParams()
-    const [apiError, setApiError] = useState<string | null>(searchParams.get('error') || null)
+    const [apiError, setApiError] = useState<string >(searchParams.get('error') || '')
     const [isLoading, setIsLoading] = useState<boolean>(false)
 
     const form = useForm<LoginFields>({
@@ -49,7 +49,7 @@ export default function LoginForm() {
             location.href = response.url || '/'
         } else {
 
-            setApiError(response?.error || 'Login failed')
+            setApiError(response?.error ??'' )
         }
         setIsLoading(false)
     }

@@ -20,10 +20,10 @@ import * as z from "zod"
 const formSchema = z.object({
     name: z.string().nonempty('name is required'),
     email: z.email("Please enter invalid email"),
-    password: z.string('password is required').regex(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/, `Matches 8 or more characters that are alphanumeric or from the specified special character set.
-    at least one uppercase letter.
-    at least one lowercase letter.
-    at least one digit.
+    password: z.string('password is required').regex(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/, `Matches 8 or more characters that are alphanumeric or from the specified special character set <br/>
+    at least one uppercase letter.<br/>
+    at least one lowercase letter.<br/>
+    at least one digit.<br/>
     at least one special character.`),
     rePassword: z.string().nonempty('rePassword is required'),
     phone: z.string().nonempty('phone is required').regex(/^(\+2|002)?01[0125]\d{8}$/, "we need egyptian phone number")
